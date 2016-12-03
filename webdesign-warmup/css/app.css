@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300|Roboto:900|Lobster');
+
+
+/* PAGE */
+
+* {
+    font-family: 'Lato', sans-serif;
+    color: #444247;
+    box-sizing: border-box;
+}
+
+.content {
+    margin: 0 10%;
+}
+
+
+/* HEADER */
+
+header {
+    padding: 15px 0 0;
+}
+
+.logo {
+    float: left;
+    margin: 0;
+    font-family: 'Lobster', cursive;
+    letter-spacing: 2px;
+    color: #444247;
+}
+
+.social{
+    float: right;
+    margin: 0;
+}
+
+.social li{
+    list-style-type: none;
+    display: inline;
+}
+
+.social img{
+    margin-top: 6px;
+    width: 24px;
+}
+
+header:after{
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+}
+
+
+/* MAIN */
+
+main{
+    padding: 0;
+    display: flex;
+    overflow: hidden;
+    height: 630px;
+}
+
+/* CONTENT */
+
+.information{
+    flex: 8;
+    overflow: auto;
+}
+
+.information::-webkit-scrollbar {
+    display: none;
+}
+
+article{
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    padding: 20px 28% 20px 0;
+    line-height: 1.5;
+    min-height: 630px;
+    font-weight: 300;
+}
+
+article h1, h2{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+    text-transform: lowercase;
+}
+
+article h1{
+    color: rgb(210, 210, 210);
+    margin: 15px 0 5px 0;
+}
+
+article h2 {
+    color: #444247;
+    margin: 0;
+}
+
+article a, article a:visited{
+    color: #444247;
+    font-style: italic;
+    text-decoration: none;
+}
+
+
+/* PHOTOS */
+
+.photo{
+    width: 600px;
+    height: 300px;
+    overflow: hidden;
+    margin: 10px 0 0 0;
+}
+
+.photo img{
+    width: 120%;
+    margin: -45px 20px 30px -40px;
+
+    -webkit-transform:scale(1.12);
+    transform:scale(1.12);
+    -webkit-transition: all 1.1s ease;
+    transition: all 1.1s ease;
+}
+
+.photo img:hover{
+    -webkit-transform:scale(1.05);
+    transform:scale(1.05);
+}
+
+.avatars{
+    margin-top: 20px;
+}
+
+.avatar{
+    margin: 0 20px 20px 0;
+    float: left;
+}
+
+.avatar img{
+    border-radius: 100%;
+    -webkit-filter: grayscale(100%);
+    -webkit-transition: .3s ease-in-out;
+    -moz-filter: grayscale(100%);
+    -moz-transition: .3s ease-in-out;
+    -o-filter: grayscale(100%);
+    -o-transition: .3s ease-in-out;
+}
+
+.avatar img:hover{
+    -webkit-filter: grayscale(20%);
+    -webkit-transition: .2s ease-in-out;
+    -moz-filter: grayscale(20%);
+    -moz-transition: .2s ease-in-out;
+    -o-filter: grayscale(20%);
+    -o-transition: .2s ease-in-out;
+}
+
+figcaption{
+    text-align: center;
+    font-size: 1rem;
+}
+
+.avatars:after{
+    content: ".";
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+}
+
+
+/* VIDEOS */
+
+video{
+    margin-top: 10px;
+    width: 600px;
+}
+
+
+/* BUTTONS */
+
+.playButton, .stopButton{
+    width: 20px;
+    height: 20px;
+    border: none;
+    margin-right: 5px;
+}
+
+.playButton{
+    background: url("http://image.flaticon.com/icons/svg/60/60813.svg") center center / 90% no-repeat;
+}
+
+.stopButton{
+    background: url("http://image.flaticon.com/icons/svg/60/60803.svg") center center / 90% no-repeat;
+}
+
+video[paused="false"] ~ .buttons .playButton {
+    background: url('http://image.flaticon.com/icons/svg/17/17270.svg') center center / 90% no-repeat;
+}
+
+
+/* SIDEBAR */
+
+aside {
+    flex: 3;
+    background-color: rgb(241, 241, 241);
+    padding: 0;
+}
+
+nav{
+    margin-left: -70px;
+    margin-top: 130px;
+}
+
+nav li {
+    list-style-type: none;
+}
+
+nav li a, nav li a:visited{
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: rgb(68, 68, 68);
+    font-size: 2.8rem;
+    line-height: 1.4;
+}
+
+.active, .active:visited{
+    color: rgb(35, 13, 210);
+    font-size: 3.0rem;
+}
+
+nav li:not(.project){
+    counter-increment: navitem;
+    margin-bottom: 5px;
+}
+
+nav ol a:not(.projectLink):before{
+    content: "0" counter(navitem) " ";
+}
+
+.project, .projectLink{
+    font-size: 1.25rem;
+}
+
+.projectLink:before{
+    content: counter(item,disc) " ";
+}
+
+.portfolioList:not(.active) + ul {
+    visibility: hidden;
+    height: 0;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding-top: 10px;
+    margin-top: 20px;
+}
+
+footer p {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-size: 0.9rem;
+}
+
+.copyright {
+    float: left;
+}
+
+.authors {
+    float: right;
+}
+
+footer:after{
+    content: ".";
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+}
+
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 1224px){
+    .content{
+        margin: 0 5%;
+    }
+    nav li a, nav li a:visited{
+        font-size: 2.2rem;
+    }
+    .active{
+        font-size: 2.4rem;
+    }
+    .project, .projectLink{
+        font-size: 1.25rem;
+    }
+}
+
+@media only screen and (max-width: 1024px){
+    .photo, video{
+        width: 450px;
+    }
+    .photo{
+        height: 225px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    body .content{
+        margin: 0;
+        padding: 0 5%;
+    }
+
+    header{
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    .social{
+        padding-left: 0;
+    }
+
+    .social li{
+        margin-left: 5px;
+    }
+
+    main{
+        height: auto;
+    }
+
+    article{
+        padding: 0 5%;
+        margin-bottom: 50px;
+    }
+
+    .avatar img{
+        -webkit-filter: grayscale(0%);
+        -moz-filter: grayscale(0%);
+        -o-filter: grayscale(0%);
+    }
+
+    .avatar img:hover{
+        -webkit-filter: grayscale(0%);
+        -moz-filter: grayscale(0%);
+        -o-filter: grayscale(0%);
+    }
+
+    .photo, video{
+        width: 100%;
+    }
+
+    aside {
+        display: none;
+    }
+
+    footer{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .authors, .copyright{
+        float: none;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    footer p{
+        clear: both;
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 480px){
+    .social{
+        clear: left;
+        float: left;
+        margin-top: 10px;
+    }
+
+    .photo{
+        height: 200px;
+    }
+
+    .avatar img{
+        width: 80px;
+    }
+
+    figcaption{
+        font-size: 0.6rem;
+    }
+}
+
+@media only screen and (max-width: 320px){
+    .content, article, header{
+        padding: 0 2%;
+    }
+
+    header{
+        padding-top: 10px;
+    }
+}
