@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", function(){
             var currentLink = a;
             var reference = currentLink.getAttribute("href");
             var anchor = document.getElementById(reference.slice(1));
-            var extraOffset = 141;
-            if(anchor.offsetTop - extraOffset <= scrollPosition && anchor.offsetTop + anchor.offsetHeight - extraOffset >= scrollPosition){
+            var extraOffset = 150;
+            if(anchor.offsetTop - extraOffset <= scrollPosition && anchor.offsetTop + anchor.offsetHeight - extraOffset + 9 >= scrollPosition){
                 currentLink.classList.add("active");
                 if(currentLink.classList.contains("projectLink")){
                     document.getElementsByClassName('portfolioList')[0].classList.add("active");
